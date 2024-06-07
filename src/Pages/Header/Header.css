@@ -1,0 +1,97 @@
+/* Ensure everything fits within the viewport */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.main-header {
+    display: flex;
+    flex-direction: column; /* Default to column for mobile-first approach */
+    height: auto; /* Adjust height for responsiveness */
+    margin-top: 4.375rem ;
+    padding: 1rem; /* Add padding for better spacing */
+}
+
+.left-header {
+    width: 100%; /* Full width for smaller screens */
+    background-color: white;
+    color: black;
+    font-size: 1.7rem; /* Smaller font size for mobile */
+    padding: 1.5rem;
+    
+}
+
+.left-header span {
+    color: lightseagreen;
+    margin-right: 0.5rem;
+}
+
+.button {
+    padding: 0.7rem 1.5rem;
+    background-color: lightseagreen;
+    color: white;
+    border: none;
+    outline: none;
+    margin: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: mediumseagreen;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button:active {
+    background-color: seagreen;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+}
+
+.right-header {
+    width: 100%; /* Full width for smaller screens */
+    height: 50vh; /* Adjust height for responsiveness */
+    background-image: url('/src/img/recycle1.png');
+    background-size: cover;
+    background-position: center;
+}
+
+@media (min-width: 768px) {
+    .main-header {
+        flex-direction: row; /* Row layout for tablets and larger screens */
+        height: 90vh; /* Restore original height */
+    }
+
+    .left-header {
+        width: 50%;
+        font-size: 4rem; /* Larger font size for tablets */
+        padding: 2.2rem;
+    }
+
+    .right-header {
+        width: 50%;
+        height: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .left-header {
+        font-size: 5rem; /* Larger font size for desktops */
+    }
+}
+@media (max-width: 768px){
+    .left-header{
+text-align: center;
+font-size: 2rem;
+    }
+
+}
